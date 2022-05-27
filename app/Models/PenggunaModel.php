@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Models;
+
+use CodeIgniter\Model;
+
+class PenggunaModel extends Model
+{
+    protected $table      = 'users';
+    protected $useTimestamps = true;
+
+    public function search($keyword)
+    {
+        return $this->table('users')->like('username', $keyword)->orLike('fisrtname', $keyword)->orLike('fisrtname', $keyword);
+    }
+    // ...
+}
